@@ -1,0 +1,267 @@
+html,
+body {
+  height:100%;
+  margin: 0;
+  padding: 0;
+  background-color:black;
+  color:green;
+  font-family:"Courier New", Courier, monospace;
+  font-size:11px;
+  position:relative;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+body {
+  padding-top:15px;
+}
+
+a {
+  color:green;
+  font-weight:bold;
+}
+
+.block {
+  height:-webkit-calc(100% - 37px);
+  height:-moz-calc(100% - 37px);
+  height:calc(100% - 37px);
+  padding:10px;
+  margin:7px;
+  float:left;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  position:relative;
+  z-index:1;
+}
+.block-scroller-container {
+  height:-webkit-calc(100% - 10px);
+  height:-moz-calc(100% - 10px);
+  height:calc(100% - 10px);
+  margin-top:5px;
+  overflow-y:auto;
+}
+.block-scroller {
+  height:10px;
+}
+
+.playheads,
+.editable {
+  margin: 0;
+  height:100%;
+  float:left;
+  padding:0;
+  border:0;
+  background-color:transparent;
+  color:green;
+  font-family:"Courier New", Courier, monospace;
+  font-size:11px;
+  resize:none;
+  line-height:9px;
+  min-height:9px;
+}
+.playheads {
+  width:70px;
+  text-align:right;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.editable {
+  width:-webkit-calc(100% - 70px);
+  width:-moz-calc(100% - 70px);
+  width:calc(100% - 70px);
+  border-bottom:1px solid green;
+  white-space:nowrap;
+}
+.macro {
+  border:1px solid green;
+  padding:0 2px;
+  margin:0;
+  background-color:transparent;
+  color:green;
+  font-family:"Courier New", Courier, monospace;
+  font-size:11px;
+  line-height:9px;
+  min-height:9px;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  width:100%;
+}
+
+textarea:read-write:focus,
+input:read-write:focus {
+     outline: none;
+}
+
+#lower-bar {
+  position:absolute;
+  width:100%;
+  bottom:0;
+  height:30px;
+  line-height:30px;
+}
+#lower-bar > div {
+  cursor:pointer;
+  display:inline-block;
+  width:auto;
+  margin:0 30px;
+}
+
+.splash {
+  position:absolute;
+  width:100%;
+  height:100%;
+  display:none;
+}
+.splash.splashed {
+  display:block;
+}
+.popup {
+  position:relative;
+  width:400px;
+  height:250px;
+  margin:-125px -200px;
+  top:50%;
+  left:50%;
+  background-color:black;
+  z-index:99;
+}
+.popup:before,
+.block:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 1px solid green;
+  background-color:black;
+}
+.popup:after,
+.block:after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: -7px;
+  left: -7px;
+  right: -7px;
+  bottom: -7px;
+  border: 1px solid green;
+}
+
+.splash textarea {
+  background-color:transparent;
+  width:100%;
+  height:-webkit-calc(100% - 23px);
+  height:-moz-calc(100% - 23px);
+  height:calc(100% - 23px);
+  border:0;
+  padding:0;
+  margin:0;
+  color:green;
+  font-family:"Courier New", Courier, monospace;
+  font-size:11px;
+  resize:none;
+  line-height:9px;
+}
+
+::selection,
+textarea::selection,
+input::selection,
+.selected {
+  background-color: green;
+  color: black;
+}
+
+.block-top-bar,
+.popup-top-bar,
+#top-bar {
+  text-align:right;
+  margin-bottom:10px;
+}
+.block-top-bar,
+.block-top-bar > div,
+#top-bar,
+#top-bar > div,
+.popup-top-bar,
+.popup-top-bar > div {
+  background-color:green;
+  color:black;
+}
+.block-top-bar > div,
+#top-bar > div,
+.popup-top-bar > div {
+  cursor:pointer;
+  display:inline-block;
+  width:auto;
+  margin:0 5px 0 30px;
+}
+.block-top-bar > div {
+  margin:0 2px;
+}
+.load,
+#top-bar-title,
+.splash-title {
+  float:left;
+  margin:0 30px 0 5px !important;
+}
+
+#top-bar {
+  position:absolute;
+  width:100%;
+  top:0;
+  left:0;
+}
+
+.block-top-bar {
+  height:12px;
+  overflow:hidden;
+  position:absolute;
+  width:-webkit-calc(100% - 20px);
+  width:-moz-calc(100% - 20px);
+  width:calc(100% - 20px);
+  top:0;
+  left:10px;
+}
+
+#global-splash .popup > div:not(.popup-top-bar),
+#rows-splash .popup > div:not(.popup-top-bar),
+#block-splash .popup > div:not(.popup-top-bar){
+  width:33%;
+  height:-webkit-calc(100% - 22px);
+  height:-moz-calc(100% - 22px);
+  height:calc(100% - 22px);
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  padding:0 5px;
+  border-right: 1px solid green;
+  float:left;
+  overflow:auto;
+}
+#global-splash .popup > div:last-child,
+#rows-splash .popup > div:last-child,
+#block-splash .popup > div:last-child {
+  border-right:0;
+}
+
+#global-splash .popup > div:not(.popup-top-bar) > div,
+#rows-splash .popup > div:not(.popup-top-bar) > div,
+#block-splash .popup > div:not(.popup-top-bar) > div,
+#midi-splash .popup > div:not(.popup-top-bar) > div {
+  cursor:pointer;
+}
+
+#about-splash .popup {
+  width:550px;
+  margin:-125px -275px;
+}
+.popup-body {
+  height:-webkit-calc(100% - 22px);
+  height:-moz-calc(100% - 22px);
+  height:calc(100% - 22px);
+  overflow:auto;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html><html><head>
+    <script src="webmidi.js"></script>
+		<script src="p5.min.js"></script>
+    <script src="p5.dom.min.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script src="sketch.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+  </head>
+  <body spellcheck="false">
+    <div id="top-bar">
+      <div id="top-bar-title">GRNSEQ</div>
+      <div id="midi-output"></div>
+      <div id="rows">1</div>
+      <div id="playing-paused">PAUSED</div>
+      <div id="global-scale"></div>
+      <div id="global-key"></div>
+      <div id="global-bpm"></div>
+      <div id="b"></div>
+      <div id="s"></div>
+    </div>
+    <div id="lower-bar">
+      <div id="save">VIEW TEXT</div>
+      <div id="load">LOAD TEXT</div>
+    </div>
+    <div id="view-splash" class="splash">
+      <div id="view-window" class="popup">
+        <div class="popup-top-bar"><div class="close">CLOSE</div></div>
+        <textarea id="view-container"></textarea>
+      </div>
+    </div>
+    <div id="load-splash" class="splash">
+      <div id="load-window" class="popup">
+        <div class="popup-top-bar"><div class="load">LOAD</div><div class="close">CLOSE</div></div>
+        <textarea id="load-container"></textarea>
+      </div>
+    </div>
+    <div id="block-splash" class="splash">
+      <div id="block-window" class="popup">
+        <div class="popup-top-bar"><div class="splash-title">CHANNEL/ROOTNOTE/DIVISOR</div><div class="close">CLOSE</div></div>
+        <div class="multi-choice" id="channel-container"></div>
+        <div class="multi-choice" id="rootnote-container"></div>
+        <div class="multi-choice" id="divisor-container"></div>
+      </div>
+    </div>
+    <div id="global-splash" class="splash">
+      <div id="global-window" class="popup">
+        <div class="popup-top-bar"><div class="splash-title">SCALE/KEY/TEMPO</div><div class="close">CLOSE</div></div>
+        <div class="multi-choice" id="scale-container"></div>
+        <div class="multi-choice" id="key-container"></div>
+        <div class="multi-choice" id="tempo-container"></div>
+      </div>
+    </div>
+    <div id="rows-splash" class="splash">
+      <div id="rows-window" class="popup">
+        <div class="popup-top-bar"><div class="splash-title">ROWS</div><div class="close">CLOSE</div></div>
+        <div class="multi-choice" id="rows-container">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+          <div>7</div>
+          <div>8</div>
+        </div>
+      </div>
+    </div>
+    <div id="midi-splash" class="splash">
+      <div id="midi-window" class="popup">
+        <div class="popup-top-bar"><div class="splash-title">MIDI OUTPUT</div><div class="close">CLOSE</div></div>
+        <div class="multi-choice" id="midi-container"></div>
+      </div>
+    </div>
+    <div id="about-splash" class="splash">
+      <div id="about-window" class="popup">
+        <div class="popup-top-bar"><div class="splash-title">GRNSEQ V1.0 beta 1</div><div class="close">CLOSE</div></div>
+        <div class="popup-body">
+          <p>Open source MIDI sequencer based on p5.js, WebMidi, and jQuery</p>
+          <pre>MIT License
+          
+Copyright (c) 2020 Nathan Birchenough
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</pre>
+          <p>Please see <a href="webmidi.js" target="_blank">webmidi.js</a> for WebMidi license statement, <a href="p5js-license.txt" target="_blank">p5js-license.txt</a> for p5.js license, <a href="https://jquery.org/license/" target="_blank">https://jquery.org/license/</a> for jQuery license</p>
+        </div>
+      </div>
+    </div>
+  
+
+</body></html>
