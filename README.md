@@ -98,6 +98,17 @@ S solos the block.. click >S to un-solo it.
 
 M! mutes the block.. M> unmutes it.
 
-> pauses the block.. ! starts it playing again
+\> pauses the block.. ! starts it playing again
 
-B! will start the block playing at the start of the next 64x1/16th note bar. It will change to B>, then toggle itself off once it's reached that new bar.
+B! will start the block playing at the start of the next 64x1/16th note bar. It will change to B>, then toggle itself off once it's reached that new bar. You can also turn it back off manually, before that point.
+
+
+*changing global parameters*
+
+'Global' parameters apply to the whole melody. They are shown at the top right of the screen. Click on either Scale, Key or Tempo, to launch a popup allowing you to change all of them.
+
+Scale and Key only apply to 'I' notes.
+
+*changing the number of rows of blocks*
+
+Click the little number to the left of PAUSED / PLAYING to change the number of rows shown on screen. The default is 1 row, but depending on number of blocks used / your screen dimensions, you can choose to show up to 8 rows.
