@@ -31,7 +31,7 @@ To load a file, open it in a text editor, and copy the text. Click LOAD TEXT at 
 
 **commands**
 
-*Commands make up your melody. They can be typed in to the right hand column of each block. Each line is a new step in the melody*
+*Commands make up your melody. They can be typed in to the right hand column of each block. Each line is a new step in the melody.*
 
 *playhead commands*
 
@@ -41,3 +41,46 @@ To load a file, open it in a text editor, and copy the text. Click LOAD TEXT at 
 
 * < A flag that doesn't create a playhead, but serves as a return point for a playhead (see ^ above)
 
+*note commands*
+
+Notes can be created in several different ways. EG:
+
+* A#4 - where A# is the note, and 4 is the octave
+
+* M35 - where 35 is the MIDI note number
+
+* I0 - where 0 is relative the the block 'root note' shown in the green bar at the top of each block. These types of notes are also quantised to the chosen scale.
+* * I{1,4,7} - each time a specific playhead passes this note, a different note will be voiced, iterating through 1, 4, then 7.
+
+* R[35,36,37] - each time a playhead passes this note, a note will be played at random out of the set 35, 36, and 37.
+
+All types of note support optional modifiers. You don't have to use all of them, but they must be used in this specific order:
+
+([ABCDGEFGMIR](#|b)?(\d{1,3}|R))|(R\[([1-9][0-9]*[ ]*,[ ]*)*[1-9][0-9]*\])|(I\{([1-9][0-9]*[ ]*,[ ]*)*[1-9][0-9]*\}))(L(\d{1,3}|R))?(V([0-9]|R))?(H(\d{1,2}|R))?(S(\d{1,3}|R)
+
+* C4L5V7H11
+would correspond to: note C4, Length 5/16th, Velocity 7 (out of 9), H=MIDI cHannel 11 (overrides 'block' channel)
+
+The digits in any of these modifiers can be replaced with R for 'very random' or r for 'a bit random'.
+
+*misc commands*
+
+* S4 - 'stutter' or 'ratchet': replay the entire line for each of the next 4 1/16th note steps). Also use R or r in place of the digits.
+
+* T120 - set the 'global' tempo to 120 BPM. Also use R or r in place of the digits.
+
+* Z2 - set the 'global' divisor to 2. Also use R or r in place of the digits. This causes the whole melody to run at a division of the global tempo, which is good for creating pleasent sounding changes of pace.
+
+*'block' commands*
+
+These commands set parameters on other blocks, which is great for creating modulation on a melodies running in those other blocks.
+
+* @2:r\*36 - would change the 'root note' of block 2 to 36. That would affect any notes defined using 'I' (see *note commands*)
+
+* @2:r+3 - would add 3 to the 'root note' of block 2. @2:r-3 would subtract 3.
+
+* @2:(play|pause|bplay|reset|preset|mute|unmute|solo|unsolo) - choose any one of the keywords in the brackets. play/pause/mute/unmute are self explanatory. bplay: start playing the block at the start of the next 64 note bar. reset: send all playheads in the block back to the last > or < that they passed. preset: pause and reset. solo: mute all *other* blocks. unsolo: unmute all blocks.
+
+* @2:ch10 - change block channel (and channels of all playheads in the block) to play on MIDI channel 10
+
+* @2:|2 - change divisor of the block (and all playheads within it) to 2 - so the playheads will move at 1/2 the global tempo
