@@ -3,7 +3,7 @@ Open source MIDI sequencer based on p5.js, WebMidi, and jQuery
 
 **simplest quickstart**
 
-Download this repo and load /index.html in your browser using the file:/// feature. Install a simple MIDI synth such as https://notahat.com/simplesynth/ to hear the MIDI notes. On a Mac you can set up an IAC Driver Bus to connect GRNSEQ with the MIDI synth. 
+Download this repo and load /index.html in your browser using the file:/// feature. Install a simple MIDI synth such as https://notahat.com/simplesynth/ to hear the MIDI notes. On a Mac you can set up an IAC Driver Bus to connect GRNSEQ with the MIDI synth. Load in one of the /examples files (see **saving and loading**)
 
 **overview**
 
