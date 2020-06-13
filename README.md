@@ -102,6 +102,15 @@ M! mutes the block.. M> unmutes it.
 
 B! will start the block playing at the start of the next 64x1/16th note bar. It will change to B>, then toggle itself off once it's reached that new bar. You can also turn it back off manually, before that point.
 
+*block macros*
+
+Macros can be written in the single line below the solid green bar on each block. Each time this line changes, the contents of the block are overwritten depending on the macros used. The block contents can then be edited as normal, but next time you type in the 'macro' line, changes made within the main block will be lost.
+
+There is only one macro available so far (plenty of room for coders to add more!):
+
+* euc([any text except comma or round brackets],[integer (number of onsets)],[integer (length of pattern)],[optional integer (rotation of pattern)])
+- creates a euclidean rhythm, repeating whatever text is in the first parameter. In place of commas within that pattern, you can use ; - so for instance I{2;5;7} would be converted to I{2,5,7}
+
 
 *changing global parameters*
 
