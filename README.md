@@ -35,7 +35,7 @@ To load a file, open it in a text editor, and copy the text. Click LOAD TEXT at 
 
 *playhead commands*
 
-* > Creates a playhead at this location, when you press ALT to play the melody. If you've previously paused the melody, a new playhead will *not* be created - if you want to start from scratch again, press ESC to reset and delete all current playheads. Then press ALT.
+* \> Creates a playhead at this location, when you press ALT to play the melody. If you've previously paused the melody, a new playhead will *not* be created - if you want to start from scratch again, press ESC to reset and delete all current playheads. Then press ALT.
 
 * ^ Tells a playhead to return to the last > or < symbol that it passed.
 
