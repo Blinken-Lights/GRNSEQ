@@ -84,7 +84,7 @@ These commands set parameters on other blocks, which is great for creating modul
 * @2:|2 - change divisor of the block (and all playheads within it) to 2 - so the playheads will move at 1/2 the global tempo
 
 
-*blocks*
+**blocks**
 
 Blocks are self-contained loops of text, with a default MIDI channel, root note and divisor (a division of the global tempo). New playheads created within a block inherit the block's MIDI channel and divisor. Notes played using 'I' are relative to the block's root note and are quantised to the global scale. Some commands can change a playheads' characteristics, but every time a block is modified, its playheads will re-inherit the block's MIDI channel and divisor.
 
@@ -112,7 +112,7 @@ There is only one macro available so far (plenty of room for coders to add more!
 - creates a euclidean rhythm, repeating whatever text is in the first parameter. In place of commas within that pattern, you can use ; - so for instance I{2;5;7} would be converted to I{2,5,7}
 
 
-*changing global parameters*
+**changing global parameters**
 
 'Global' parameters apply to the whole melody. They are shown at the top right of the screen. Click on either Scale, Key or Tempo, to launch a popup allowing you to change all of them.
 
