@@ -56,8 +56,6 @@ Notes can be created in several different ways. EG:
 
 All types of note support optional modifiers. You don't have to use all of them, but they must be used in this specific order:
 
-([ABCDGEFGMIR](#|b)?(\d{1,3}|R))|(R\[([1-9][0-9]*[ ]*,[ ]*)*[1-9][0-9]*\])|(I\{([1-9][0-9]*[ ]*,[ ]*)*[1-9][0-9]*\}))(L(\d{1,3}|R))?(V([0-9]|R))?(H(\d{1,2}|R))?(S(\d{1,3}|R)
-
 * C4L5V7H11
 would correspond to: note C4, Length 5/16th, Velocity 7 (out of 9), H=MIDI cHannel 11 (overrides 'block' channel)
 
@@ -79,8 +77,27 @@ These commands set parameters on other blocks, which is great for creating modul
 
 * @2:r+3 - would add 3 to the 'root note' of block 2. @2:r-3 would subtract 3.
 
-* @2:(play|pause|bplay|reset|preset|mute|unmute|solo|unsolo) - choose any one of the keywords in the brackets. play/pause/mute/unmute are self explanatory. bplay: start playing the block at the start of the next 64 note bar. reset: send all playheads in the block back to the last > or < that they passed. preset: pause and reset. solo: mute all *other* blocks. unsolo: unmute all blocks.
+* @2:(play|pause|bplay|reset|preset|mute|unmute|solo|unsolo) - choose any one of the keywords in the brackets. play/pause/mute/unmute are self explanatory. bplay: start playing the block at the start of the next 64x1/16th note bar. reset: send all playheads in the block back to the last > or < that they passed. preset: pause and reset. solo: mute all *other* blocks. unsolo: unmute all blocks.
 
 * @2:ch10 - change block channel (and channels of all playheads in the block) to play on MIDI channel 10
 
 * @2:|2 - change divisor of the block (and all playheads within it) to 2 - so the playheads will move at 1/2 the global tempo
+
+
+*blocks*
+
+Blocks are self-contained loops of text, with a default MIDI channel, root note and divisor (a division of the global tempo). New playheads created within a block inherit the block's MIDI channel and divisor. Notes played using 'I' are relative to the block's root note and are quantised to the global scale. Some commands can change a playheads' characteristics, but every time a block is modified, its playheads will re-inherit the block's MIDI channel and divisor.
+
+*block buttons - within green bar at the top of each block*
+
+Click on the channel, root note or divisor shown in the green top bar of a block, to change those settings.
+
+Click '+' to create a new block next to the one you clicked. '-' will delete the block.
+
+S solos the block.. click >S to un-solo it.
+
+M! mutes the block.. M> unmutes it.
+
+> pauses the block.. ! starts it playing again
+
+B! will start the block playing at the start of the next 64x1/16th note bar. It will change to B>, then toggle itself off once it's reached that new bar.
